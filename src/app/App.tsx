@@ -63,7 +63,7 @@ function App() {
             choice{foodList.length > 1 ? "s" : ""} you added so far.
           </h3>
 
-          <div className="m-2 my-8 w-full relative">
+          <div className="m-2 my-8 w-full relative focus-within:text-gray-700">
             <input
               value={foodInput}
               onChange={(e) => setFoodInput(e.target.value)}
@@ -72,7 +72,7 @@ function App() {
                   addFood();
                 }
               }}
-              className="outline-white rounded-xl w-full p-4 placeholder-white bg-transparent border border-white"
+              className="focus:bg-white focus:text-gray-800 focus:placeholder-gray-700 outline-white rounded-xl w-full p-4 placeholder-white bg-transparent border border-white"
               type="text"
               placeholder="Add your usual food..."
               name="food"
