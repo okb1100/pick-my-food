@@ -1,0 +1,19 @@
+version: "2"
+services:
+  pick-my-food:
+    image: aikain/simplehttpserver:0.1
+    restart: always
+    volumes:
+      - "./build:/var/www"
+    networks:
+      - traefik
+    expose:
+      - 80
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.pick-my-food.rule=Host(`pick.domat.io`)"
+      - "traefik.http.routers.pick-my-food.tls=true"
+      - "traefik.http.routers.pick-my-food.tls.certresolver=tlsResolver"
+networks:
+    traefik:
+      external: true
