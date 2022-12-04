@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Food = {
   name: string;
 };
 
 function App() {
-  const [foodList, setFoodList] = useState<Food[]>(
-    JSON.parse(localStorage.getItem("foodList") || "") || []
-  );
+  const [foodList, setFoodList] = useState<Food[]>([]);
   const [foodInput, setFoodInput] = useState("");
   const [listShown, setListShown] = useState(false);
   const [randomChoice, setRandomChoice] = useState(-1);
+
+  useEffect(() => {
+    try {
+      const list = JSON.parse(localStorage.getItem("foodList") || "")
+      setFoodList(list)
+    } catch (error) {
+      setFoodList([])
+    }
+  }, [])
 
   const addFood = () => {
     if (foodInput.length > 0) {
