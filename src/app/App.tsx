@@ -44,9 +44,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="flex flex-col items-center flex-1 bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400 w-screen h-screen">
-        <div className="flex lg:w-1/2  flex-col rounded-3xl mt-8 w-full m-4 p-10 border-white border  text-white bg-white bg-opacity-20">
-        
+      <div className="flex flex-col lg:px-0 px-8 items-center flex-1 bg-gradient-to-r from-sky-400 via-rose-400 to-lime-400 w-screen h-screen">
+        <div className="flex lg:w-1/2 flex-col rounded-3xl mt-8 w-full p-10 border-white border  text-white bg-white bg-opacity-20">
           <h1 className="text-center text-4xl">
             <span className="block text-5xl">🍱</span>
             I'll tell you what to eat
@@ -114,8 +113,8 @@ function App() {
         )}
 
         {listShown && (
-          <div className="fixed flex flex-1 flex-col justify-center items-center w-screen h-screen overflow-y-scroll bg-opacity-90 backdrop-blur-lg">
-            <div className="shadow-lg flex flex-col lg:w-1/2 w-full rounded-3xl mx-4 p-10 bg-white bg-opacity-20 text-white border border-white">
+          <div className="fixed flex flex-1 flex-col lg:px-0 px-4 justify-center items-center w-screen h-screen overflow-y-scroll bg-opacity-90 backdrop-blur-lg">
+            <div className="shadow-lg flex flex-col  lg:w-1/2 w-full rounded-3xl p-10 bg-white bg-opacity-20 text-white border border-white">
               <div className="flex flex-row-reverse justify-between">
                 <span onClick={toggleList} className="cursor-pointer underline">
                   Close
